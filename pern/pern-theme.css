@@ -56,7 +56,6 @@ body {
 .framer-nlo83a,
 .framer-l5gbs7,
 .framer-1qwup6h,
-.framer-17isftd,
 .framer-12xu0tj,
 .framer-9B55h .framer-ekueln,
 .framer-9B55h .framer-1vgtr6d,
@@ -434,8 +433,8 @@ button.framer-0NRfS .framer-text {
   background: var(--pern-soft-butter) !important;
 }
 
-img[src*="/pern/partners/ef-lockup.png"] {
-  object-fit: contain !important;
+.framer-zVvLJ .framer-km6f9 {
+  display: none !important;
 }
 
 img[src*="/pern/images/hero-city.webp"] {

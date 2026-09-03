@@ -4,16 +4,18 @@ const hiddenSelectors = [
   ".framer-nlo83a",
   ".framer-l5gbs7",
   ".framer-1qwup6h",
-  ".framer-17isftd",
   ".framer-12xu0tj",
   ".framer-9B55h .framer-ekueln",
   ".framer-9B55h .framer-1vgtr6d",
+  ".framer-zVvLJ .framer-km6f9",
   'a[href="/blog"]',
+  'a[href="./blog"]',
   'a[href^="/blog/"]',
   'a[href*="__removed-pern-journal"]',
   'a[href="/press"]',
+  'a[href="./press"]',
   'a[href*="__removed-pern-press"]',
-  'a[href="/__removed-pern-social"]',
+  'a[href*="__removed-pern-social"]',
 ].join(",");
 
 const contactEmail = "rynndngg@gmail.com";
@@ -55,7 +57,13 @@ const imageMap = new Map([
   ["9P3mMsYFQrl3Ugl4UNc6cw6WF48.webp", "/pern/images/coastal-arrival.webp"],
   ["HdMeZhvLZr0pCQfrHCWRPSEGgQQ.webp", "/pern/images/hotel-lobby.webp"],
   ["midUol0v4FWELMu3jVmRI3B5c.png", "/pern/images/city-terrace.webp"],
-  ["ztkXNbmbHWe2rjREGDXMxtmdb4.png", "/pern/partners/ef-lockup.png"],
+]);
+
+const responsiveImageVariants = new Map([
+  ["/pern/images/hero-city.webp", { widths: [512, 1024, 1440, 2048, 2560, 3840] }],
+  ["/pern/images/hotel-lobby.webp", { widths: [512, 1024, 1440], fullWidth: 1636 }],
+  ["/pern/images/coastal-arrival.webp", { widths: [512, 1024, 1440], fullWidth: 1540 }],
+  ["/pern/images/city-terrace.webp", { widths: [512, 1024, 1440], fullWidth: 1448 }],
 ]);
 
 const imageAltMap = new Map([
@@ -78,9 +86,7 @@ const editorialCopy = new Map([
     "Review the terms, privacy commitments, and service policies that protect every Pern partnership.",
   ],
   ["hello@pern.com", "rynndngg@gmail.com"],
-  ["founders@zaplar.com", "rynndngg@gmail.com"],
   ["support@pern.com", "rynndngg@gmail.com"],
-  ["support@zaplar.com", "rynndngg@gmail.com"],
   ["Stockholm, Sweden", "San Francisco, CA"],
   ["[Tap to discover]", "Explore service →"],
   ["Send your message", "Continue to email"],
@@ -107,9 +113,7 @@ function rebrandText(root) {
       const parent = node.parentElement;
       if (!parent || parent.closest("script,style,noscript")) return NodeFilter.FILTER_REJECT;
       const text = node.data.trim();
-      return /Zaplar|ZAPLAR/.test(node.data) || editorialCopy.has(text)
-        ? NodeFilter.FILTER_ACCEPT
-        : NodeFilter.FILTER_REJECT;
+      return editorialCopy.has(text) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
     },
   });
   const nodes = [];
@@ -118,8 +122,6 @@ function rebrandText(root) {
     const exactReplacement = editorialCopy.get(node.data.trim());
     if (exactReplacement) {
       node.data = node.data.replace(node.data.trim(), exactReplacement);
-    } else {
-      node.data = node.data.replaceAll("ZAPLAR", "PERN").replaceAll("Zaplar", "Pern");
     }
   }
 }
@@ -132,36 +134,51 @@ function replacementFor(value) {
   return null;
 }
 
+function responsiveReplacementFor(value) {
+  if (!value) return null;
+  for (const source of responsiveImageVariants.keys()) {
+    const stem = source.slice(0, -".webp".length);
+    if (value.includes(stem)) return source;
+  }
+  return null;
+}
+
 function rewriteImage(image) {
   const currentValue = image.currentSrc || image.src || image.srcset;
-  if (currentValue?.includes("/pern/partners/ef-lockup.png")) {
-    image.alt = "Entrepreneurs First";
-    return;
-  }
-  const replacement = replacementFor(currentValue);
+  const replacement = replacementFor(currentValue) || responsiveReplacementFor(currentValue);
   if (!replacement) {
     for (const [source, alt] of imageAltMap) {
       if (currentValue?.includes(source)) image.alt = alt;
     }
     return;
   }
-  const sourceSet = image.getAttribute("srcset") || "";
-  if (sourceSet) {
-    image.setAttribute(
-      "srcset",
-      sourceSet
-        .split(",")
-        .map((candidate) => {
-          const [, descriptor = ""] = candidate.trim().split(/\s+/, 2);
-          const width = descriptor.endsWith("w") ? Number.parseInt(descriptor, 10) : null;
-          const query = width ? `?scale-down-to=${width}` : "";
-          return `${replacement}${query}${descriptor ? ` ${descriptor}` : ""}`;
-        })
-        .join(", "),
-    );
+  const variants = responsiveImageVariants.get(replacement);
+  if (variants) {
+    const stem = replacement.slice(0, -".webp".length);
+    const candidates = [
+      ...variants.widths.map((width) => `${stem}-${width}.webp ${width}w`),
+      ...(variants.fullWidth ? [`${replacement} ${variants.fullWidth}w`] : []),
+    ];
+    image.setAttribute("srcset", candidates.join(", "));
   }
   image.src = replacement;
-  if (replacement.includes("/pern/partners/ef-lockup.png")) image.alt = "Entrepreneurs First";
+  if (replacement === "/pern/images/hero-city.webp") {
+    image.loading = "eager";
+    image.fetchPriority = "high";
+  }
+}
+
+function normalizedInternalHref(link) {
+  const rawHref = link.getAttribute("href");
+  if (!rawHref) return null;
+  if (rawHref === "." || rawHref === "./") return "/";
+  if (rawHref.startsWith("./")) return `/${rawHref.slice(2)}`;
+  return null;
+}
+
+function normalizeInternalLink(link) {
+  const normalized = normalizedInternalHref(link);
+  if (normalized) link.setAttribute("href", normalized);
 }
 
 function enhanceContactForm(form) {
@@ -316,6 +333,7 @@ function refine(root = document) {
   }
 
   for (const link of queryIncludingRoot("a[href]")) {
+    normalizeInternalLink(link);
     if (link.innerText.trim() === "Book a demo") {
       link.setAttribute("href", demoPath);
       link.removeAttribute("target");
@@ -338,15 +356,6 @@ function refine(root = document) {
     logo.closest("a")?.setAttribute("aria-label", "Pern home");
   }
 
-  for (const element of queryIncludingRoot("[alt],[title],[aria-label],[placeholder]")) {
-    for (const attribute of ["alt", "title", "aria-label", "placeholder"]) {
-      const value = element.getAttribute(attribute);
-      if (value && /Zaplar|ZAPLAR/.test(value)) {
-        element.setAttribute(attribute, value.replaceAll("ZAPLAR", "PERN").replaceAll("Zaplar", "Pern"));
-      }
-    }
-  }
-
   for (const footer of queryIncludingRoot("footer")) {
     const logo = footer.querySelector("a.framer-1043yku");
     if (logo) {
@@ -356,7 +365,7 @@ function refine(root = document) {
   }
 
   for (const form of queryIncludingRoot("form")) enhanceContactForm(form);
-  for (const faq of queryIncludingRoot('[data-framer-name="Closed"], [data-framer-name="Open"]')) {
+  for (const faq of queryIncludingRoot('[data-framer-name="Closed"], [data-framer-name="Open"], [role="button"]')) {
     enhanceFaq(faq);
   }
 
@@ -393,7 +402,7 @@ document.addEventListener(
     }
     const link = event.target.closest?.("a[href]");
     if (!link || link.hasAttribute("download") || link.target === "_blank") return;
-    const url = new URL(link.href, location.href);
+    const url = new URL(normalizedInternalHref(link) || link.href, location.href);
     if (url.protocol !== "http:" && url.protocol !== "https:") return;
     if (url.origin !== location.origin) return;
     if (url.pathname === location.pathname && url.search === location.search) return;
@@ -432,7 +441,7 @@ function startRefinement() {
 // Framer hydrates asynchronously after window.load. Refining the DOM before that
 // boundary creates recoverable React mismatches, so enhancement starts once the
 // initial motion tree has settled.
-const refinementDelay = 1200;
+const refinementDelay = 200;
 if (document.readyState === "complete") {
   setTimeout(startRefinement, refinementDelay);
 } else {
