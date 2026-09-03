@@ -19,7 +19,7 @@ const hiddenSelectors = [
 ].join(",");
 
 const contactEmail = "rynndngg@gmail.com";
-const demoPath = "/contact?subject=demo";
+const demoPath = "/contact/?subject=demo";
 const evidenceSourceUrl =
   "https://resdiary.com/industry-insights/ai-in-hospitality-2025-report?region=GB";
 const routeMetadata = new Map([
@@ -42,6 +42,23 @@ const routeMetadata = new Map([
 ]);
 const enhancedForms = new WeakSet();
 const enhancedFaqs = new WeakSet();
+const internalPagePaths = new Set([
+  "/about",
+  "/contact",
+  "/cookie-declaration",
+  "/legal",
+  "/legal/cookies",
+  "/legal/dpa",
+  "/legal/privacy",
+  "/legal/service-description",
+  "/legal/support",
+  "/legal/terms",
+  "/services/booking-engine",
+  "/services/guest-intelligence",
+  "/services/messaging",
+  "/services/point-of-sale",
+  "/services/property-management-system",
+]);
 const faqQuestions = new Set([
   "What is Pern?",
   "How long does onboarding take?",
@@ -171,9 +188,16 @@ function rewriteImage(image) {
 function normalizedInternalHref(link) {
   const rawHref = link.getAttribute("href");
   if (!rawHref) return null;
-  if (rawHref === "." || rawHref === "./") return "/";
-  if (rawHref.startsWith("./")) return `/${rawHref.slice(2)}`;
-  return null;
+  let candidate = rawHref;
+  if (candidate === "." || candidate === "./") candidate = "/";
+  else if (candidate.startsWith("./")) candidate = `/${candidate.slice(2)}`;
+  else if (!candidate.startsWith("/")) return null;
+
+  const url = new URL(candidate, location.origin);
+  const routePath = url.pathname.length > 1 ? url.pathname.replace(/\/$/, "") : url.pathname;
+  if (internalPagePaths.has(routePath)) url.pathname = `${routePath}/`;
+  const normalized = `${url.pathname}${url.search}${url.hash}`;
+  return normalized === rawHref ? null : normalized;
 }
 
 function normalizeInternalLink(link) {
@@ -237,10 +261,13 @@ function enhanceContactForm(form) {
 }
 
 function enhanceFaq(element) {
-  const question = element.innerText.trim().split("\n")[0];
+  const lines = element.innerText.split("\n").map((line) => line.trim()).filter(Boolean);
+  const question = lines[0];
   if (!faqQuestions.has(question)) return;
   element.setAttribute("role", "button");
-  element.setAttribute("aria-expanded", String(element.getAttribute("data-framer-name") !== "Closed"));
+  const isExpanded = element.getAttribute("data-framer-name") === "Open"
+    || (element.getAttribute("data-framer-name") !== "Closed" && lines.length > 1);
+  element.setAttribute("aria-expanded", String(isExpanded));
   if (enhancedFaqs.has(element)) return;
   enhancedFaqs.add(element);
   element.addEventListener("keydown", (event) => {
@@ -283,7 +310,8 @@ function updateEvidenceStats() {
 }
 
 function updateMetadata() {
-  const metadata = routeMetadata.get(location.pathname);
+  const routePath = location.pathname.length > 1 ? location.pathname.replace(/\/$/, "") : location.pathname;
+  const metadata = routeMetadata.get(routePath);
   if (!metadata) return;
   const [title, description] = metadata;
   document.title = title;
@@ -380,7 +408,9 @@ function refine(root = document) {
 
   for (const link of queryIncludingRoot("nav a[href], footer a[href]")) {
     const url = new URL(link.href, location.href);
-    if (url.origin === location.origin && url.pathname === location.pathname) {
+    const linkPath = url.pathname.length > 1 ? url.pathname.replace(/\/$/, "") : url.pathname;
+    const pagePath = location.pathname.length > 1 ? location.pathname.replace(/\/$/, "") : location.pathname;
+    if (url.origin === location.origin && linkPath === pagePath) {
       link.setAttribute("aria-current", "page");
     } else {
       link.removeAttribute("aria-current");
@@ -420,6 +450,11 @@ const observer = new MutationObserver((mutations) => {
   requestAnimationFrame(() => {
     scheduled = false;
     for (const mutation of mutations) {
+      const mutationElement = mutation.target.nodeType === Node.ELEMENT_NODE
+        ? mutation.target
+        : mutation.target.parentElement;
+      const faq = mutationElement?.closest?.('[role="button"]');
+      if (faq) enhanceFaq(faq);
       if (mutation.type === "characterData") refine(mutation.target.parentElement || document);
       for (const node of mutation.addedNodes) {
         if (node.nodeType === Node.ELEMENT_NODE) refine(node);
