@@ -450,8 +450,21 @@ img[src*="/pern/images/hero-city.webp"] {
     font-size: 27px;
   }
 
+  /* Keep secondary-page openings compact while preserving the original hierarchy. */
+  .framer-9B55h .framer-15y182a,
+  .framer-GMi0e .framer-snz6ug,
+  .framer-zFSJg [data-framer-name="Hero"] {
+    padding-top: 128px !important;
+  }
+
   img[src*="/pern/images/hero-city.webp"] {
     object-position: 59% 50% !important;
+  }
+
+  /* Editorial service links should scan quickly on a phone, not become a long card wall. */
+  [data-framer-name="Services List"] [data-framer-name="Service Item"],
+  [data-framer-name="Services List"] [data-framer-name="Service Link"] {
+    height: 440px !important;
   }
 
   .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"] {
