@@ -1,0 +1,507 @@
+:root {
+  color-scheme: light;
+  --pern-red: #7c2733;
+  --pern-red-hover: #5d1c25;
+  --pern-orange: #a55f4d;
+  --pern-butter: #e8ecee;
+  --pern-moss: #405a50;
+  --pern-slate: #35515b;
+  --pern-ink: #161a1d;
+  --pern-body: #4e5356;
+  --pern-paper: #f7f5f2;
+  --pern-surface: #fff;
+  --pern-cream: #eee9e4;
+  --pern-soft-butter: #e8ecee;
+  --pern-line: #d8d2cb;
+  --pern-post-hero: linear-gradient(180deg, #eee9e4 0%, #f7f5f2 34%, #fff 100%);
+  --pern-quiet-wash: linear-gradient(135deg, #f7f5f2 0%, #e8ecee 100%);
+}
+
+html {
+  background: var(--pern-paper);
+}
+
+body {
+  --token-c4aeef20-d2e9-4d10-9f45-42b99d2ab7bd: var(--pern-paper) !important;
+  --token-6e16e10d-1eee-4f0f-81c4-7e0efaf4cbe7: var(--pern-ink) !important;
+  --token-f10490d3-184a-4123-824c-1d9a72443dcc: var(--pern-body) !important;
+  --token-f122f397-673e-473e-a7a7-7ce93c670e30: var(--pern-red) !important;
+  --token-63c2ed28-2397-46ac-8f94-7220196e3d7a: var(--pern-line) !important;
+  --token-2387b702-4182-4bd5-a0b4-deb8ebc8880b: var(--pern-soft-butter) !important;
+  --token-aac97d75-254b-4d02-a3c2-e75d9a7fc189: var(--pern-orange) !important;
+  --token-1b6b236c-7ebf-4825-b3a6-28315e7ef335: var(--pern-moss) !important;
+  --token-1199b211-02cb-4af1-9d63-484f545737ed: #edf1f2 !important;
+  --token-45a07b6e-16bc-44f5-a0b2-dd98b68c8070: #dce5e7 !important;
+  --token-ce36a0e5-6664-4160-85df-3743554763a8: var(--pern-line) !important;
+  --token-ec16c513-a534-4299-92d2-77b8dc65c0a0: var(--pern-ink) !important;
+  --token-5bb99761-8df5-4e1f-aa95-6b3d10e4e40a: var(--pern-moss) !important;
+  background: var(--pern-paper) !important;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  color: var(--pern-ink);
+  background: #dce5e7;
+}
+
+:where(a, button, input, select, textarea, [role="button"]):focus-visible {
+  outline: 3px solid rgba(124, 39, 51, 0.68) !important;
+  outline-offset: 3px !important;
+}
+
+/* Retired routes and About sections are removed without disturbing Framer's motion tree. */
+.framer-bv63yr,
+.framer-13r2gtp,
+.framer-nlo83a,
+.framer-l5gbs7,
+.framer-1qwup6h,
+.framer-17isftd,
+.framer-12xu0tj,
+.framer-9B55h .framer-ekueln,
+.framer-9B55h .framer-1vgtr6d,
+a[href="/blog"],
+a[href^="/blog/"],
+a[href*="__removed-pern-journal"],
+a[href="/press"],
+a[href*="__removed-pern-press"],
+a[href="/__removed-pern-social"],
+a[href="/services/spatial-reasoning"],
+a[href="./services/spatial-reasoning"] {
+  display: none !important;
+}
+
+/* Typographic Pern wordmarks preserve the original logo boxes and responsive geometry. */
+[data-framer-name^="Pern-logo"] {
+  isolation: isolate;
+}
+
+[data-framer-name^="Pern-logo"] img,
+.pern-footer-wordmark > * {
+  opacity: 0 !important;
+}
+
+[data-framer-name^="Pern-logo"]::after,
+.pern-footer-wordmark::after {
+  content: "pern";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  color: var(--pern-ink);
+  font-family: "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(25px, 2.1vw, 31px);
+  font-weight: 700;
+  letter-spacing: -0.075em;
+  line-height: 1;
+  text-transform: lowercase;
+  white-space: nowrap;
+}
+
+[data-framer-name="Pern-logo-full-white"]::after,
+.pern-footer-wordmark::after {
+  color: #fff;
+}
+
+.pern-footer-wordmark {
+  position: relative !important;
+  min-width: 105px;
+  min-height: 25px;
+}
+
+.pern-footer-wordmark::after {
+  font-size: 29px;
+}
+
+/* Restrained, high-contrast actions. */
+a.framer-i8HaF .framer-13pyzuz,
+a.framer-i8HaF .framer-101n2f1,
+button.framer-0NRfS .framer-1pu2ah8,
+button.framer-0NRfS .framer-6xq2ql {
+  background-color: var(--pern-red) !important;
+  transition: background-color 220ms ease, color 220ms ease, transform 220ms ease !important;
+}
+
+a.framer-i8HaF:hover .framer-13pyzuz,
+a.framer-i8HaF:hover .framer-101n2f1,
+button.framer-0NRfS:hover .framer-1pu2ah8,
+button.framer-0NRfS:hover .framer-6xq2ql {
+  color: #fff !important;
+  background-color: var(--pern-red-hover) !important;
+}
+
+a.framer-i8HaF .framer-13pyzuz .framer-text,
+a.framer-i8HaF .framer-101n2f1 .framer-text,
+button.framer-0NRfS .framer-1pu2ah8 .framer-text,
+button.framer-0NRfS .framer-6xq2ql .framer-text {
+  color: #fff !important;
+}
+
+a.framer-i8HaF:hover .framer-13pyzuz .framer-text,
+a.framer-i8HaF:hover .framer-101n2f1 .framer-text,
+button.framer-0NRfS:hover .framer-1pu2ah8 .framer-text,
+button.framer-0NRfS:hover .framer-6xq2ql .framer-text {
+  color: #fff !important;
+}
+
+.framer-styles-preset-zvzvew {
+  color: var(--pern-red) !important;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  line-height: 1.2 !important;
+}
+
+[data-framer-name="Label Mark"] {
+  background-color: var(--pern-red) !important;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.framer-styles-preset-99wt20 {
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.framer-styles-preset-1psvj3t {
+  font-weight: 500 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.framer-styles-preset-1p66bam {
+  font-weight: 500 !important;
+  letter-spacing: -0.012em !important;
+}
+
+.framer-styles-preset-1jqn681 {
+  font-weight: 400 !important;
+  letter-spacing: -0.004em !important;
+}
+
+.framer-styles-preset-1y28avm,
+.framer-styles-preset-uzssxo,
+.framer-styles-preset-16vlxwr {
+  font-weight: 400 !important;
+  letter-spacing: -0.004em !important;
+}
+
+nav .framer-text,
+a.framer-i8HaF .framer-text,
+button.framer-0NRfS .framer-text {
+  font-weight: 500 !important;
+}
+
+/* Homepage: bank-grade restraint softened with residential hospitality tones. */
+.framer-zVvLJ .framer-1of5k9q {
+  padding-bottom: clamp(164px, 21vh, 220px) !important;
+}
+
+.framer-zVvLJ section[data-framer-name="Product"] {
+  background: var(--pern-post-hero) !important;
+}
+
+.framer-zVvLJ .framer-1p4dw7t {
+  background: var(--pern-quiet-wash) !important;
+}
+
+.framer-zVvLJ .framer-jhuahu,
+.framer-zVvLJ .framer-1r8yozd {
+  background: var(--pern-paper) !important;
+}
+
+.framer-zVvLJ .framer-c1os97,
+.framer-zVvLJ .framer-124tmvn {
+  background: var(--pern-quiet-wash) !important;
+}
+
+.framer-zVvLJ .framer-cxpicn {
+  color: var(--pern-ink) !important;
+  background: var(--pern-paper) !important;
+  box-shadow: inset 0 1px 0 rgba(22, 26, 29, 0.08), inset 0 -1px 0 rgba(22, 26, 29, 0.08) !important;
+}
+
+.framer-zVvLJ .framer-cxpicn .framer-text {
+  color: var(--pern-body) !important;
+}
+
+.framer-zVvLJ .framer-cxpicn h2,
+.framer-zVvLJ .framer-cxpicn h2 *,
+.framer-zVvLJ .framer-cxpicn h3,
+.framer-zVvLJ .framer-cxpicn h3 * {
+  color: var(--pern-ink) !important;
+}
+
+.framer-zVvLJ .framer-cxpicn .framer-styles-preset-zvzvew {
+  color: var(--pern-red) !important;
+}
+
+.framer-zVvLJ .framer-1awuyli {
+  gap: 0 !important;
+  border-top: 1px solid var(--pern-line);
+  border-bottom: 1px solid var(--pern-line);
+}
+
+.framer-zVvLJ [data-framer-name^="Stat Card"] {
+  --border-top-width: 0px !important;
+  --border-right-width: 0px !important;
+  --border-bottom-width: 0px !important;
+  --border-left-width: 0px !important;
+  color: var(--pern-ink) !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  gap: 24px !important;
+  justify-content: flex-start !important;
+  place-content: flex-start !important;
+  min-height: 176px !important;
+  padding: 28px 24px 30px !important;
+}
+
+.framer-zVvLJ [data-framer-name^="Stat Card"]::after {
+  content: none !important;
+  display: none !important;
+}
+
+.framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:not(:first-child) {
+  border-left: 1px solid var(--pern-line) !important;
+}
+
+[data-framer-name^="Stat Card"] h3,
+[data-framer-name^="Stat Card"] h3 * {
+  color: var(--pern-ink) !important;
+  font-family: "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif !important;
+  font-size: clamp(34px, 3.2vw, 40px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.035em !important;
+  line-height: 1.05 !important;
+}
+
+[data-framer-name^="Stat Card"] p,
+[data-framer-name^="Stat Card"] p * {
+  color: var(--pern-body) !important;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.006em !important;
+  line-height: 1.5 !important;
+}
+
+.pern-evidence-source {
+  width: min(1200px, calc(100% - 40px));
+  margin: -18px auto 0;
+  color: #6a6865;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+}
+
+.pern-evidence-source a {
+  color: var(--pern-red);
+  text-decoration-color: rgba(124, 39, 51, 0.32);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.pern-evidence-source a:hover {
+  text-decoration-color: currentColor;
+}
+
+/* About, contact, legal and service pages use the same editorial palette cadence. */
+.framer-9B55h .framer-1smj3w1,
+.framer-GMi0e .framer-snz6ug,
+[data-framer-name="Numbers"] {
+  background: var(--pern-quiet-wash) !important;
+}
+
+.framer-GMi0e .framer-18o4p8g,
+[data-framer-name="Legal Content"],
+[data-framer-name="Other Services"] {
+  background: var(--pern-cream) !important;
+}
+
+.framer-GMi0e .framer-mblw4b,
+[data-framer-name="Document Content"],
+[data-framer-name="Cookie Content"] {
+  background: var(--pern-paper) !important;
+}
+
+/* Service recommendations read as an editorial collection, not template cards. */
+[data-framer-name="Services List"] {
+  align-items: stretch !important;
+}
+
+[data-framer-name="Service Item"] {
+  min-width: 0;
+}
+
+[data-framer-name="Service Link"] {
+  overflow: hidden !important;
+  border: 1px solid rgba(22, 26, 29, 0.16) !important;
+  border-radius: 2px !important;
+  background: #242728 !important;
+  box-shadow: 0 1px 1px rgba(22, 26, 29, 0.05), 0 14px 34px rgba(22, 26, 29, 0.08) !important;
+  isolation: isolate;
+  transition: border-color 260ms ease, box-shadow 260ms ease, transform 260ms ease !important;
+}
+
+[data-framer-name="Service Link"]:hover {
+  border-color: rgba(124, 39, 51, 0.44) !important;
+  box-shadow: 0 2px 2px rgba(22, 26, 29, 0.05), 0 20px 42px rgba(22, 26, 29, 0.13) !important;
+  transform: translateY(-2px) !important;
+}
+
+[data-framer-name="Service Background Image"] {
+  filter: saturate(0.82) contrast(1.04) brightness(0.9) !important;
+  transform: scale(1.002) !important;
+  transition: filter 420ms ease, transform 620ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+}
+
+[data-framer-name="Service Link"]:hover [data-framer-name="Service Background Image"] {
+  filter: saturate(0.9) contrast(1.05) brightness(0.94) !important;
+  transform: scale(1.018) !important;
+}
+
+[data-framer-name="Service Card Scrim"] {
+  background: linear-gradient(180deg, rgba(16, 19, 20, 0.02) 18%, rgba(16, 19, 20, 0.28) 54%, rgba(16, 19, 20, 0.9) 100%) !important;
+  backdrop-filter: none !important;
+}
+
+[data-framer-name="Service Link"] h2,
+[data-framer-name="Service Link"] h2 *,
+[data-framer-name="Service Link"] p,
+[data-framer-name="Service Link"] p * {
+  color: #fff !important;
+  text-shadow: 0 1px 18px rgba(0, 0, 0, 0.2);
+}
+
+[data-framer-name="Service Link"] h2,
+[data-framer-name="Service Link"] h2 * {
+  font-weight: 500 !important;
+  letter-spacing: -0.028em !important;
+}
+
+[data-framer-name="Service Link"] .framer-hamami,
+[data-framer-name="Service Link"] .framer-hamami * {
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.035em !important;
+  text-transform: none !important;
+}
+
+.pern-form-note {
+  margin: -2px 0 0;
+  color: #6a6865;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
+.framer-zFSJg .framer-1r9hobj,
+.framer-zFSJg .framer-1587hca,
+.framer-zFSJg .framer-dghgsd {
+  background: #f1efeb !important;
+}
+
+[data-framer-name="Legal Documents"] > a {
+  border-top: 2px solid rgba(124, 39, 51, 0.52) !important;
+}
+
+[data-framer-name="Document Content"] h2,
+[data-framer-name="Document Content"] a,
+[data-framer-name="Cookie Content"] h2,
+[data-framer-name="Cookie Content"] a {
+  color: var(--pern-red) !important;
+}
+
+[data-framer-name="Document Content"] th,
+[data-framer-name="Cookie Content"] th {
+  color: var(--pern-ink) !important;
+  background: var(--pern-soft-butter) !important;
+}
+
+img[src*="/pern/partners/ef-lockup.png"] {
+  object-fit: contain !important;
+}
+
+img[src*="/pern/images/hero-city.webp"] {
+  object-position: 58% 50% !important;
+}
+
+[data-framer-name="FinalCTA"] img[src*="/pern/images/city-terrace.webp"] {
+  object-position: 54% 50% !important;
+}
+
+@media (max-width: 809.98px) {
+  [data-framer-name^="Pern-logo"]::after {
+    font-size: 27px;
+  }
+
+  img[src*="/pern/images/hero-city.webp"] {
+    object-position: 59% 50% !important;
+  }
+
+  .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"] {
+    border-left: 0 !important;
+    min-height: 0 !important;
+    padding: 22px 0 24px !important;
+  }
+
+  .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:not(:first-child) {
+    border-left: 0 !important;
+    border-top: 1px solid var(--pern-line) !important;
+  }
+
+  [data-framer-name^="Stat Card"] h3,
+  [data-framer-name^="Stat Card"] h3 * {
+    font-size: 32px !important;
+  }
+
+  .pern-evidence-source {
+    width: calc(100% - 40px);
+    margin-top: -10px;
+  }
+}
+
+@media (min-width: 810px) and (max-width: 1199.98px) {
+  .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:nth-child(3) {
+    border-left: 0 !important;
+  }
+
+  .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:nth-child(n + 3) {
+    border-top: 1px solid var(--pern-line) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  a.framer-i8HaF .framer-13pyzuz,
+  a.framer-i8HaF .framer-101n2f1,
+  button.framer-0NRfS .framer-1pu2ah8,
+  button.framer-0NRfS .framer-6xq2ql {
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-framer-name="Service Link"],
+  [data-framer-name="Service Background Image"] {
+    transition-duration: 0.01ms !important;
+  }
+
+  [data-framer-name="Service Link"]:hover,
+  [data-framer-name="Service Link"]:hover [data-framer-name="Service Background Image"] {
+    transform: none !important;
+  }
+}
