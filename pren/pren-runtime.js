@@ -19,6 +19,7 @@ const hiddenSelectors = [
 ].join(",");
 
 const contactEmail = "rynndngg@gmail.com";
+const bookingUrl = "https://cal.com/ryandeng/30min";
 const demoPath = "/contact/?subject=demo";
 const evidenceSourceUrl =
   "https://resdiary.com/industry-insights/ai-in-hospitality-2025-report?region=GB";
@@ -213,23 +214,26 @@ function enhanceContactForm(form) {
   const message = form.elements.namedItem("Message");
   if (!name || !email || !subject || !message) return;
 
+  const isDemoBooking = new URLSearchParams(location.search).get("subject") === "demo";
   enhancedForms.add(form);
   form.id = "contact-form";
-  form.dataset.prenDelivery = "email-draft";
+  form.dataset.prenDelivery = isDemoBooking ? "calendar" : "email-draft";
 
   const submit = form.querySelector('button[type="submit"]');
   const submitLabel = submit?.querySelector("p");
-  if (submitLabel) submitLabel.textContent = "Continue to email";
+  if (submitLabel) submitLabel.textContent = isDemoBooking ? "Continue to booking" : "Continue to email";
 
   if (!form.querySelector(".pren-form-note")) {
     const note = document.createElement("p");
     note.className = "pren-form-note";
     note.id = "pren-form-note";
-    note.textContent = "Opens your email app with these details ready to send.";
+    note.textContent = isDemoBooking
+      ? "Next, choose a time on Ryan's calendar."
+      : "Opens your email app with these details ready to send.";
     submit?.parentElement?.insertAdjacentElement("afterend", note);
   }
 
-  if (new URLSearchParams(location.search).get("subject") === "demo") {
+  if (isDemoBooking) {
     subject.value = "Demo request";
     subject.dispatchEvent(new Event("input", { bubbles: true }));
     subject.dispatchEvent(new Event("change", { bubbles: true }));
@@ -244,6 +248,22 @@ function enhanceContactForm(form) {
       const data = new FormData(form);
       const selectedSubject = String(data.get("Subject") || "General inquiry");
       const company = String(data.get("Company") || "").trim();
+      if (isDemoBooking) {
+        const booking = new URL(bookingUrl);
+        booking.searchParams.set("name", String(data.get("Name") || "").trim());
+        booking.searchParams.set("email", String(data.get("Email") || "").trim());
+        booking.searchParams.set(
+          "notes",
+          [
+            ...(company ? [`Company: ${company}`] : []),
+            `Request: ${selectedSubject}`,
+            "",
+            String(data.get("Message") || "").trim(),
+          ].join("\n"),
+        );
+        window.location.assign(booking.href);
+        return;
+      }
       const body = [
         `Name: ${String(data.get("Name") || "").trim()}`,
         `Email: ${String(data.get("Email") || "").trim()}`,
