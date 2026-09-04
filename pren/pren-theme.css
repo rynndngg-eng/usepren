@@ -1,47 +1,47 @@
 :root {
   color-scheme: light;
-  --pern-red: #7c2733;
-  --pern-red-hover: #5d1c25;
-  --pern-orange: #a55f4d;
-  --pern-butter: #e8ecee;
-  --pern-moss: #405a50;
-  --pern-slate: #35515b;
-  --pern-ink: #161a1d;
-  --pern-body: #4e5356;
-  --pern-paper: #f7f5f2;
-  --pern-surface: #fff;
-  --pern-cream: #eee9e4;
-  --pern-soft-butter: #e8ecee;
-  --pern-line: #d8d2cb;
-  --pern-post-hero: linear-gradient(180deg, #eee9e4 0%, #f7f5f2 34%, #fff 100%);
-  --pern-quiet-wash: linear-gradient(135deg, #f7f5f2 0%, #e8ecee 100%);
+  --pren-red: #7c2733;
+  --pren-red-hover: #5d1c25;
+  --pren-orange: #a55f4d;
+  --pren-butter: #e8ecee;
+  --pren-moss: #405a50;
+  --pren-slate: #35515b;
+  --pren-ink: #161a1d;
+  --pren-body: #4e5356;
+  --pren-paper: #f7f5f2;
+  --pren-surface: #fff;
+  --pren-cream: #eee9e4;
+  --pren-soft-butter: #e8ecee;
+  --pren-line: #d8d2cb;
+  --pren-post-hero: linear-gradient(180deg, #eee9e4 0%, #f7f5f2 34%, #fff 100%);
+  --pren-quiet-wash: linear-gradient(135deg, #f7f5f2 0%, #e8ecee 100%);
 }
 
 html {
-  background: var(--pern-paper);
+  background: var(--pren-paper);
 }
 
 body {
-  --token-c4aeef20-d2e9-4d10-9f45-42b99d2ab7bd: var(--pern-paper) !important;
-  --token-6e16e10d-1eee-4f0f-81c4-7e0efaf4cbe7: var(--pern-ink) !important;
-  --token-f10490d3-184a-4123-824c-1d9a72443dcc: var(--pern-body) !important;
-  --token-f122f397-673e-473e-a7a7-7ce93c670e30: var(--pern-red) !important;
-  --token-63c2ed28-2397-46ac-8f94-7220196e3d7a: var(--pern-line) !important;
-  --token-2387b702-4182-4bd5-a0b4-deb8ebc8880b: var(--pern-soft-butter) !important;
-  --token-aac97d75-254b-4d02-a3c2-e75d9a7fc189: var(--pern-orange) !important;
-  --token-1b6b236c-7ebf-4825-b3a6-28315e7ef335: var(--pern-moss) !important;
+  --token-c4aeef20-d2e9-4d10-9f45-42b99d2ab7bd: var(--pren-paper) !important;
+  --token-6e16e10d-1eee-4f0f-81c4-7e0efaf4cbe7: var(--pren-ink) !important;
+  --token-f10490d3-184a-4123-824c-1d9a72443dcc: var(--pren-body) !important;
+  --token-f122f397-673e-473e-a7a7-7ce93c670e30: var(--pren-red) !important;
+  --token-63c2ed28-2397-46ac-8f94-7220196e3d7a: var(--pren-line) !important;
+  --token-2387b702-4182-4bd5-a0b4-deb8ebc8880b: var(--pren-soft-butter) !important;
+  --token-aac97d75-254b-4d02-a3c2-e75d9a7fc189: var(--pren-orange) !important;
+  --token-1b6b236c-7ebf-4825-b3a6-28315e7ef335: var(--pren-moss) !important;
   --token-1199b211-02cb-4af1-9d63-484f545737ed: #edf1f2 !important;
   --token-45a07b6e-16bc-44f5-a0b2-dd98b68c8070: #dce5e7 !important;
-  --token-ce36a0e5-6664-4160-85df-3743554763a8: var(--pern-line) !important;
-  --token-ec16c513-a534-4299-92d2-77b8dc65c0a0: var(--pern-ink) !important;
-  --token-5bb99761-8df5-4e1f-aa95-6b3d10e4e40a: var(--pern-moss) !important;
-  background: var(--pern-paper) !important;
+  --token-ce36a0e5-6664-4160-85df-3743554763a8: var(--pren-line) !important;
+  --token-ec16c513-a534-4299-92d2-77b8dc65c0a0: var(--pren-ink) !important;
+  --token-5bb99761-8df5-4e1f-aa95-6b3d10e4e40a: var(--pren-moss) !important;
+  background: var(--pren-paper) !important;
   font-kerning: normal;
   text-rendering: optimizeLegibility;
 }
 
 ::selection {
-  color: var(--pern-ink);
+  color: var(--pren-ink);
   background: #dce5e7;
 }
 
@@ -61,33 +61,33 @@ body {
 .framer-9B55h .framer-1vgtr6d,
 a[href="/blog"],
 a[href^="/blog/"],
-a[href*="__removed-pern-journal"],
+a[href*="__removed-pren-journal"],
 a[href="/press"],
-a[href*="__removed-pern-press"],
-a[href="/__removed-pern-social"],
+a[href*="__removed-pren-press"],
+a[href="/__removed-pren-social"],
 a[href="/services/spatial-reasoning"],
 a[href="./services/spatial-reasoning"] {
   display: none !important;
 }
 
-/* Typographic Pern wordmarks preserve the original logo boxes and responsive geometry. */
-[data-framer-name^="Pern-logo"] {
+/* Typographic Pren wordmarks preserve the original logo boxes and responsive geometry. */
+[data-framer-name^="Pren-logo"] {
   isolation: isolate;
 }
 
-[data-framer-name^="Pern-logo"] img,
-.pern-footer-wordmark > * {
+[data-framer-name^="Pren-logo"] img,
+.pren-footer-wordmark > * {
   opacity: 0 !important;
 }
 
-[data-framer-name^="Pern-logo"]::after,
-.pern-footer-wordmark::after {
-  content: "pern";
+[data-framer-name^="Pren-logo"]::after,
+.pren-footer-wordmark::after {
+  content: "pren";
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
-  color: var(--pern-ink);
+  color: var(--pren-ink);
   font-family: "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
   font-size: clamp(25px, 2.1vw, 31px);
   font-weight: 700;
@@ -97,18 +97,18 @@ a[href="./services/spatial-reasoning"] {
   white-space: nowrap;
 }
 
-[data-framer-name="Pern-logo-full-white"]::after,
-.pern-footer-wordmark::after {
+[data-framer-name="Pren-logo-full-white"]::after,
+.pren-footer-wordmark::after {
   color: #fff;
 }
 
-.pern-footer-wordmark {
+.pren-footer-wordmark {
   position: relative !important;
   min-width: 105px;
   min-height: 25px;
 }
 
-.pern-footer-wordmark::after {
+.pren-footer-wordmark::after {
   font-size: 29px;
 }
 
@@ -117,7 +117,7 @@ a.framer-i8HaF .framer-13pyzuz,
 a.framer-i8HaF .framer-101n2f1,
 button.framer-0NRfS .framer-1pu2ah8,
 button.framer-0NRfS .framer-6xq2ql {
-  background-color: var(--pern-red) !important;
+  background-color: var(--pren-red) !important;
   transition: background-color 220ms ease, color 220ms ease, transform 220ms ease !important;
 }
 
@@ -126,7 +126,7 @@ a.framer-i8HaF:hover .framer-101n2f1,
 button.framer-0NRfS:hover .framer-1pu2ah8,
 button.framer-0NRfS:hover .framer-6xq2ql {
   color: #fff !important;
-  background-color: var(--pern-red-hover) !important;
+  background-color: var(--pren-red-hover) !important;
 }
 
 a.framer-i8HaF .framer-13pyzuz .framer-text,
@@ -144,7 +144,7 @@ button.framer-0NRfS:hover .framer-6xq2ql .framer-text {
 }
 
 .framer-styles-preset-zvzvew {
-  color: var(--pern-red) !important;
+  color: var(--pren-red) !important;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
   font-size: 13px !important;
   font-weight: 500 !important;
@@ -153,7 +153,7 @@ button.framer-0NRfS:hover .framer-6xq2ql .framer-text {
 }
 
 [data-framer-name="Label Mark"] {
-  background-color: var(--pern-red) !important;
+  background-color: var(--pren-red) !important;
 }
 
 h1,
@@ -205,48 +205,48 @@ button.framer-0NRfS .framer-text {
 }
 
 .framer-zVvLJ section[data-framer-name="Product"] {
-  background: var(--pern-post-hero) !important;
+  background: var(--pren-post-hero) !important;
 }
 
 .framer-zVvLJ .framer-1p4dw7t {
-  background: var(--pern-quiet-wash) !important;
+  background: var(--pren-quiet-wash) !important;
 }
 
 .framer-zVvLJ .framer-jhuahu,
 .framer-zVvLJ .framer-1r8yozd {
-  background: var(--pern-paper) !important;
+  background: var(--pren-paper) !important;
 }
 
 .framer-zVvLJ .framer-c1os97,
 .framer-zVvLJ .framer-124tmvn {
-  background: var(--pern-quiet-wash) !important;
+  background: var(--pren-quiet-wash) !important;
 }
 
 .framer-zVvLJ .framer-cxpicn {
-  color: var(--pern-ink) !important;
-  background: var(--pern-paper) !important;
+  color: var(--pren-ink) !important;
+  background: var(--pren-paper) !important;
   box-shadow: inset 0 1px 0 rgba(22, 26, 29, 0.08), inset 0 -1px 0 rgba(22, 26, 29, 0.08) !important;
 }
 
 .framer-zVvLJ .framer-cxpicn .framer-text {
-  color: var(--pern-body) !important;
+  color: var(--pren-body) !important;
 }
 
 .framer-zVvLJ .framer-cxpicn h2,
 .framer-zVvLJ .framer-cxpicn h2 *,
 .framer-zVvLJ .framer-cxpicn h3,
 .framer-zVvLJ .framer-cxpicn h3 * {
-  color: var(--pern-ink) !important;
+  color: var(--pren-ink) !important;
 }
 
 .framer-zVvLJ .framer-cxpicn .framer-styles-preset-zvzvew {
-  color: var(--pern-red) !important;
+  color: var(--pren-red) !important;
 }
 
 .framer-zVvLJ .framer-1awuyli {
   gap: 0 !important;
-  border-top: 1px solid var(--pern-line);
-  border-bottom: 1px solid var(--pern-line);
+  border-top: 1px solid var(--pren-line);
+  border-bottom: 1px solid var(--pren-line);
 }
 
 .framer-zVvLJ [data-framer-name^="Stat Card"] {
@@ -254,7 +254,7 @@ button.framer-0NRfS .framer-text {
   --border-right-width: 0px !important;
   --border-bottom-width: 0px !important;
   --border-left-width: 0px !important;
-  color: var(--pern-ink) !important;
+  color: var(--pren-ink) !important;
   background: transparent !important;
   border: 0 !important;
   border-radius: 0 !important;
@@ -272,12 +272,12 @@ button.framer-0NRfS .framer-text {
 }
 
 .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:not(:first-child) {
-  border-left: 1px solid var(--pern-line) !important;
+  border-left: 1px solid var(--pren-line) !important;
 }
 
 [data-framer-name^="Stat Card"] h3,
 [data-framer-name^="Stat Card"] h3 * {
-  color: var(--pern-ink) !important;
+  color: var(--pren-ink) !important;
   font-family: "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif !important;
   font-size: clamp(34px, 3.2vw, 40px) !important;
   font-weight: 400 !important;
@@ -287,7 +287,7 @@ button.framer-0NRfS .framer-text {
 
 [data-framer-name^="Stat Card"] p,
 [data-framer-name^="Stat Card"] p * {
-  color: var(--pern-body) !important;
+  color: var(--pren-body) !important;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif !important;
   font-size: 15px !important;
   font-weight: 400 !important;
@@ -295,7 +295,7 @@ button.framer-0NRfS .framer-text {
   line-height: 1.5 !important;
 }
 
-.pern-evidence-source {
+.pren-evidence-source {
   width: min(1200px, calc(100% - 40px));
   margin: -18px auto 0;
   color: #6a6865;
@@ -306,14 +306,14 @@ button.framer-0NRfS .framer-text {
   line-height: 1.55;
 }
 
-.pern-evidence-source a {
-  color: var(--pern-red);
+.pren-evidence-source a {
+  color: var(--pren-red);
   text-decoration-color: rgba(124, 39, 51, 0.32);
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
-.pern-evidence-source a:hover {
+.pren-evidence-source a:hover {
   text-decoration-color: currentColor;
 }
 
@@ -321,19 +321,19 @@ button.framer-0NRfS .framer-text {
 .framer-9B55h .framer-1smj3w1,
 .framer-GMi0e .framer-snz6ug,
 [data-framer-name="Numbers"] {
-  background: var(--pern-quiet-wash) !important;
+  background: var(--pren-quiet-wash) !important;
 }
 
 .framer-GMi0e .framer-18o4p8g,
 [data-framer-name="Legal Content"],
 [data-framer-name="Other Services"] {
-  background: var(--pern-cream) !important;
+  background: var(--pren-cream) !important;
 }
 
 .framer-GMi0e .framer-mblw4b,
 [data-framer-name="Document Content"],
 [data-framer-name="Cookie Content"] {
-  background: var(--pern-paper) !important;
+  background: var(--pren-paper) !important;
 }
 
 /* Service recommendations read as an editorial collection, not template cards. */
@@ -400,7 +400,7 @@ button.framer-0NRfS .framer-text {
   text-transform: none !important;
 }
 
-.pern-form-note {
+.pren-form-note {
   margin: -2px 0 0;
   color: #6a6865;
   font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -424,29 +424,29 @@ button.framer-0NRfS .framer-text {
 [data-framer-name="Document Content"] a,
 [data-framer-name="Cookie Content"] h2,
 [data-framer-name="Cookie Content"] a {
-  color: var(--pern-red) !important;
+  color: var(--pren-red) !important;
 }
 
 [data-framer-name="Document Content"] th,
 [data-framer-name="Cookie Content"] th {
-  color: var(--pern-ink) !important;
-  background: var(--pern-soft-butter) !important;
+  color: var(--pren-ink) !important;
+  background: var(--pren-soft-butter) !important;
 }
 
 .framer-zVvLJ .framer-km6f9 {
   display: none !important;
 }
 
-img[src*="/pern/images/hero-city.webp"] {
+img[src*="/pren/images/hero-city.webp"] {
   object-position: 58% 50% !important;
 }
 
-[data-framer-name="FinalCTA"] img[src*="/pern/images/city-terrace.webp"] {
+[data-framer-name="FinalCTA"] img[src*="/pren/images/city-terrace.webp"] {
   object-position: 54% 50% !important;
 }
 
 @media (max-width: 809.98px) {
-  [data-framer-name^="Pern-logo"]::after {
+  [data-framer-name^="Pren-logo"]::after {
     font-size: 27px;
   }
 
@@ -457,7 +457,7 @@ img[src*="/pern/images/hero-city.webp"] {
     padding-top: 128px !important;
   }
 
-  img[src*="/pern/images/hero-city.webp"] {
+  img[src*="/pren/images/hero-city.webp"] {
     object-position: 59% 50% !important;
   }
 
@@ -475,7 +475,7 @@ img[src*="/pern/images/hero-city.webp"] {
 
   .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:not(:first-child) {
     border-left: 0 !important;
-    border-top: 1px solid var(--pern-line) !important;
+    border-top: 1px solid var(--pren-line) !important;
   }
 
   [data-framer-name^="Stat Card"] h3,
@@ -483,7 +483,7 @@ img[src*="/pern/images/hero-city.webp"] {
     font-size: 32px !important;
   }
 
-  .pern-evidence-source {
+  .pren-evidence-source {
     width: calc(100% - 40px);
     margin-top: -10px;
   }
@@ -495,7 +495,7 @@ img[src*="/pern/images/hero-city.webp"] {
   }
 
   .framer-zVvLJ .framer-1awuyli > [data-framer-name^="Stat Card"]:nth-child(n + 3) {
-    border-top: 1px solid var(--pern-line) !important;
+    border-top: 1px solid var(--pren-line) !important;
   }
 }
 
