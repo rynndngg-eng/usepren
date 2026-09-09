@@ -21,25 +21,119 @@ const hiddenSelectors = [
 const contactEmail = "rynndngg@gmail.com";
 const bookingUrl = "https://cal.com/ryandeng/30min";
 const demoPath = "/contact/?subject=demo";
-const evidenceSourceUrl =
-  "https://resdiary.com/industry-insights/ai-in-hospitality-2025-report?region=GB";
 const routeMetadata = new Map([
-  ["/", ["Pren | Hotel Operations, Unified", "Pren unifies property management, booking, point of sale, messaging, and guest intelligence in one hotel operating system."]],
-  ["/about", ["About Pren | Hotel Operations Software", "Learn why Pren is building one modern operating system for hotel teams."]],
-  ["/contact", ["Contact Pren | Hotel Software", "Talk with Pren about pricing, integrations, onboarding, or a tailored demo for your hotel or hotel group."]],
-  ["/cookie-declaration", ["Cookie Declaration | Pren", "Review the cookies and tracking technologies used on the Pren website."]],
-  ["/legal", ["Terms & Privacy | Pren", "Review Pren’s terms, privacy commitments, and service policies."]],
-  ["/legal/dpa", ["Data Processing Agreement | Pren", "Review Pren’s data processing terms and privacy commitments."]],
-  ["/legal/privacy", ["Privacy Policy | Pren", "Review how Pren handles and protects personal information."]],
-  ["/legal/terms", ["Terms of Service | Pren", "Review the terms governing use of Pren services."]],
-  ["/legal/cookies", ["Cookie Policy | Pren", "Review how cookies are used on the Pren website."]],
-  ["/legal/support", ["Support Terms | Pren", "Review Pren’s support hours, response targets, and service process."]],
-  ["/legal/service-description", ["Service Description | Pren", "Review the scope and operation of Pren’s hotel software services."]],
-  ["/services/property-management-system", ["Hotel Property Management System (PMS) | Pren", "Keep front desk, housekeeping, reservations, billing, and hotel operations in sync with Pren PMS."]],
-  ["/services/booking-engine", ["Commission-Free Hotel Booking Engine | Pren", "Turn hotel website visitors into direct reservations with secure checkout, packages, add-ons, and live availability."]],
-  ["/services/point-of-sale", ["Hospitality Point of Sale (POS) | Pren", "Connect hotel restaurants, bars, spas, and retail to guest profiles, room charges, and operations."]],
-  ["/services/messaging", ["Hotel Guest Messaging Platform | Pren", "Bring hotel email and OTA conversations into one multilingual guest messaging inbox."]],
-  ["/services/guest-intelligence", ["Hotel Guest Intelligence Platform | Pren", "Unify guest history, preferences, and spend so hotel teams can deliver more personal service."]],
+  [
+    "/cookie-declaration",
+    [
+      "Cookie Declaration | Pren",
+      "Review the cookies and tracking technologies used on the Pren website."
+    ]
+  ],
+  [
+    "/legal",
+    [
+      "Terms & Privacy | Pren",
+      "Review Pren’s terms, privacy commitments, and service policies."
+    ]
+  ],
+  [
+    "/legal/dpa",
+    [
+      "Data Processing Agreement | Pren",
+      "Review Pren’s data processing terms and privacy commitments."
+    ]
+  ],
+  [
+    "/legal/privacy",
+    [
+      "Privacy Policy | Pren",
+      "Review how Pren handles personal information."
+    ]
+  ],
+  [
+    "/legal/terms",
+    [
+      "Terms of Service | Pren",
+      "Review Pren’s published software terms. Finance services are governed by your written engagement."
+    ]
+  ],
+  [
+    "/legal/cookies",
+    [
+      "Cookie Policy | Pren",
+      "Review how cookies are used on the Pren website."
+    ]
+  ],
+  [
+    "/legal/support",
+    [
+      "Support Terms | Pren",
+      "Review Pren’s published software support terms."
+    ]
+  ],
+  [
+    "/legal/service-description",
+    [
+      "Service Description | Pren",
+      "Service scope is set out in your written engagement with Pren."
+    ]
+  ],
+  [
+    "/",
+    [
+      "Pren | Accounting and Back Office for Startups",
+      "Accounting, taxes, payroll, and financial operations for startups. Intelligent software and expert judgment, so founders can focus on building."
+    ]
+  ],
+  [
+    "/about",
+    [
+      "About Pren | Built for Startup Founders",
+      "We’re building the accounting and back-office firm for startups, combining intelligent software and financial expertise to give founders their time back."
+    ]
+  ],
+  [
+    "/contact",
+    [
+      "Contact Pren | Startup Accounting and Back Office",
+      "Talk with Pren about accounting, taxes, payroll, and financial operations for your startup. Tell us what you’re building and what you want taken off your plate."
+    ]
+  ],
+  [
+    "/services/accounting",
+    [
+      "Startup Accounting | Pren",
+      "Accounting for startups, with books, reconciliations, and financial context kept together as your company grows."
+    ]
+  ],
+  [
+    "/services/taxes",
+    [
+      "Startup Taxes | Pren",
+      "Year-round tax preparation for startups. Connect accounting, company changes, and supporting records before filing season."
+    ]
+  ],
+  [
+    "/services/payroll",
+    [
+      "Startup Payroll | Pren",
+      "Payroll and financial administration for growing startup teams, connected to accounting and company changes."
+    ]
+  ],
+  [
+    "/services/financial-operations",
+    [
+      "Startup Financial Operations | Pren",
+      "A team to carry startup financial work through: bills, documents, requests, and the changes behind your numbers."
+    ]
+  ],
+  [
+    "/services/fundraising-readiness",
+    [
+      "Startup Fundraising Readiness | Pren",
+      "Keep financial records, supporting documents, and reporting connected as your startup prepares for funding and diligence."
+    ]
+  ]
 ]);
 const enhancedForms = new WeakSet();
 const enhancedFaqs = new WeakSet();
@@ -54,19 +148,19 @@ const internalPagePaths = new Set([
   "/legal/service-description",
   "/legal/support",
   "/legal/terms",
-  "/services/booking-engine",
-  "/services/guest-intelligence",
-  "/services/messaging",
-  "/services/point-of-sale",
-  "/services/property-management-system",
+  "/services/taxes",
+  "/services/fundraising-readiness",
+  "/services/financial-operations",
+  "/services/payroll",
+  "/services/accounting",
 ]);
 const faqQuestions = new Set([
   "What is Pren?",
-  "How long does onboarding take?",
-  "Does the AI act without my approval?",
-  "Does Pren replace my existing systems?",
-  "Is my data secure?",
-  "How is Pren priced?",
+  "How does onboarding work?",
+  "What will I need to approve?",
+  "Do I need to change my systems?",
+  "How do you handle sensitive data?",
+  "How is Pren priced?"
 ]);
 
 const imageMap = new Map([
@@ -85,44 +179,277 @@ const responsiveImageVariants = new Map([
 ]);
 
 const imageAltMap = new Map([
-  ["QLvbVlBnGT9ntr01Cm54TD7yk.webp", "Pren property management schedule"],
-  ["loq5tkwhJVMwjgpMM3UNtJupW8s.png", "Pren unified guest messaging inbox"],
-  ["7aZtmBBEAZPvqEkyKgHbRll3Lao.png", "Pren direct booking experience"],
-  ["wF7rKm0VDM2QEsv055PsfCYen8.png", "Pren point-of-sale interface"],
-  ["vOjIBI6wK4JPl2NTAQQNwPEKtV4.png", "Pren guest intelligence profile"],
-  ["Rpqs93qsm0RFSJLkBfejwwnQAfg.webp", "Pren spatial operations view"],
-  ["V54DaVSxovypi2LjFdicj3SFW0E.webp", "Pren booking engine"],
-  ["lupgq0BeZV6tgxwWUi3z3UMXOc.webp", "Pren point-of-sale interface"],
-  ["Rr3k2PXdBPO5sHi3BttPInFarI.webp", "Pren guest messaging interface"],
+  [
+    "LWciQDs2HSYMOqmf3HLdZvk06c.webp",
+    "Illustrative Pren finance overview with cash, runway, reconciled transactions and completed work for Meridian Labs, a demo company."
+  ],
+  [
+    "hotel-lobby.webp",
+    "ASCII-inspired San Francisco cityscape with fine burgundy and sage connections on ivory."
+  ],
+  [
+    "Ww9LkYSQAjxEExdqEAsfzDTIA0.webp",
+    "Concept preview of Pren completing monthly books, reconciliation, payroll matching, and tax workpapers for a demo company."
+  ],
+  [
+    "fWp9FKS85PU5vtVRYVAY8ADH0uA.png",
+    "Concept preview of Pren asking one final accounting question with month choices and a voice response option."
+  ],
+  [
+    "dC5dMS42UXlHYGRD9KyKsNbGrw.png",
+    "Demo monthly close calendar showing reconciled accounts, reviewed books, and completed reporting."
+  ],
+  [
+    "mCUOZqVUTUKsNa7OlHF3cJuLGU.webp",
+    "Demo reconciled transaction ledger with source accounts, matched records, and clear transaction amounts."
+  ],
+  [
+    "V54DaVSxovypi2LjFdicj3SFW0E.webp",
+    "Illustrative Pren tax workspace showing year-round preparation for a demo startup."
+  ],
+  [
+    "rKVQbzNt0rRY6xA3AgOx69hnnWk.webp",
+    "Concept preview of Pren coordinating financial work after a new hire, a funding round, and customer revenue."
+  ],
+  [
+    "QLvbVlBnGT9ntr01Cm54TD7yk.webp",
+    "Concept preview of Pren accounting showing reconciled books, cash, burn, and runway for a demo company."
+  ],
+  [
+    "DGOVFpht4IqhBz3HRXktXc0U.png",
+    "Demo accounting expert review queue showing funding, revenue, and payroll issues resolved."
+  ],
+  [
+    "4YpZ1YfWJPmjwAFFEpmR9PrJAo.png",
+    "Demo payroll tax filing review with employee withholding and employer tax deposits reconciled."
+  ],
+  [
+    "Rr3k2PXdBPO5sHi3BttPInFarI.webp",
+    "Illustrative Pren operations workspace with a prepared invoice approval for a demo startup."
+  ],
+  [
+    "vn9HeULEJp3lucqM0Q5vrsL2zc.webp",
+    "Illustrative Pren investor workspace with financial records for a demo startup."
+  ],
+  [
+    "lupgq0BeZV6tgxwWUi3z3UMXOc.webp",
+    "Illustrative Pren payroll workspace showing payroll review and connected records for a demo startup."
+  ],
+  [
+    "gDm70WXMWcIuEY0N6CM0rQFU1g.jpg",
+    "ASCII illustration of founders working beside a large studio window overlooking a city."
+  ],
+  [
+    "loq5tkwhJVMwjgpMM3UNtJupW8s.png",
+    "Concept preview of a founder asking Pren about a new hire and receiving confirmation that the financial follow-through is handled."
+  ],
+  [
+    "GgngolLn2Hb2Ewb0JvHi05vEQs.webp",
+    "Concept preview of a founder asking Pren about a new hire and receiving confirmation that the financial follow-through is handled."
+  ],
+  [
+    "3pvA4LbOKtcpetJKZdJ4HZDX4.png",
+    "Demo payroll cash movement chart showing net pay, tax deposits, benefits, and total company cost."
+  ],
+  [
+    "4bxwGwXtm4SxLF8OIY2jhlkXA.png",
+    "Demo tax preparation context showing company, state, payroll, and research records collected."
+  ],
+  [
+    "iXKOCKIXAWtpopGyOkxipzyHS8.webp",
+    "Demo funding round record showing a closed two million dollar SAFE and its supporting documents."
+  ],
+  [
+    "n523GLZincajiNF1etm8ItFM8.webp",
+    "Demo fundraising company financial profile with cash, burn, runway, and connected financial records."
+  ],
+  [
+    "wF7rKm0VDM2QEsv055PsfCYen8.png",
+    "Concept preview of a prepared payroll showing gross pay, employee withholding, net pay, and total company cost with an approval button."
+  ],
+  [
+    "4pdANzgBsr6sC61JYNWg6KX92UU.png",
+    "Concept preview of a prepared payroll showing gross pay, employee withholding, net pay, and total company cost with an approval button."
+  ],
+  [
+    "vOjIBI6wK4JPl2NTAQQNwPEKtV4.png",
+    "Concept preview of Pren fundraising readiness with financial statements, cash reporting, funding history, and supporting records prepared."
+  ],
+  [
+    "nH2I2tCCtA8Hnz0k9unHthLQ3Rk.webp",
+    "Demo company document vault with organized accounting, payroll, tax, and funding records."
+  ],
+  [
+    "7aZtmBBEAZPvqEkyKgHbRll3Lao.png",
+    "Concept preview of Pren tax preparation continuing throughout the year, with completed work leading to a final review."
+  ],
+  [
+    "Rpqs93qsm0RFSJLkBfejwwnQAfg.webp",
+    "Concept preview of Pren connecting bank activity, contracts, payroll, and funding records into one company context."
+  ]
 ]);
 
 const editorialCopy = new Map([
-  ["LEGAL", "TERMS & PRIVACY"],
-  ["Legal", "Terms & privacy"],
+  [
+    "LEGAL",
+    "TERMS & PRIVACY"
+  ],
+  [
+    "Legal",
+    "Terms & privacy"
+  ],
   [
     "Find Pren’s agreements, policies, and notices. Select a document to review the current version.",
-    "Review the terms, privacy commitments, and service policies that protect every Pren partnership.",
+    "Review Pren’s published policies and the terms that apply to your engagement."
   ],
-  ["hello@pren.com", "rynndngg@gmail.com"],
-  ["support@pren.com", "rynndngg@gmail.com"],
-  ["Stockholm, Sweden", "San Francisco, CA"],
-  ["[Tap to discover]", "Explore service →"],
-  ["Send your message", "Continue to email"],
-  ["Lost in space", "Page not found"],
-  ["Back to Home", "Back to home"],
-  ["Built to for enterprises. Your data will always be secure.", "Built for enterprise operations, with security and data protection designed into the platform."],
-  ["See what Pren is doing and why, nothing happens without a clear trail.", "See what Pren is doing and why—every action has a clear trail."],
-  ["The system works ahead of you. Every action reviewable, every decision yours.", "The system works ahead of you. Every action is reviewable; every approval remains yours."],
-  ["The agentic operating system for hotels. Helping exceptional hoteliers do their best work.", "One operating system for the modern hotel. Helping exceptional hoteliers do their best work."],
-  ["The system knows who your guests are prepares suggestions to make their stay truly personal.", "Pren brings guest history, preferences, and spend into one profile, then suggests thoughtful ways to personalize each stay."],
-  ["One system for all your payments. Select from a wide variety of configurations for your need.", "Run payments for rooms, restaurants, spas, and retail in one system, with workflows tailored to each outlet."],
-  ["Create a bespoke booking experience for any type of booking to drive upsell and direct bookings.", "Create a tailored booking experience that makes direct reservations and relevant upgrades easy."],
-  ["From bookings to getting quotes from external vendors to book an event, Pren handles everything.", "From reservations and guest requests to vendor quotes for events, Pren coordinates the work from start to finish."],
-  ["Thanks to Spatial Reasoning, Pren can reason about the physical properties of a hotel.", "Pren models how rooms, venues, equipment, and staff relate across the property, so decisions account for the physical hotel."],
   [
-    "2.1 The help desk team can be reached at +46(0)7355524 or support@pren.com and is available during the Agreed Hours of Service.",
-    "2.1 The help desk team can be reached at rynndngg@gmail.com and is available during the Agreed Hours of Service.",
+    "hello@pren.com",
+    "rynndngg@gmail.com"
   ],
+  [
+    "support@pren.com",
+    "rynndngg@gmail.com"
+  ],
+  [
+    "Stockholm, Sweden",
+    "San Francisco, CA"
+  ],
+  [
+    "[Tap to discover]",
+    "Explore service →"
+  ],
+  [
+    "Send your message",
+    "Continue to email"
+  ],
+  [
+    "Lost in space",
+    "Page not found"
+  ],
+  [
+    "Back to Home",
+    "Back to home"
+  ],
+  [
+    "Built for exceptional hoteliers",
+    "Built for exceptional founders"
+  ],
+  [
+    "Helping exceptional hoteliers do their best work.",
+    "Helping exceptional founders do their best work."
+  ],
+  [
+    "We believe great hospitality is about being present with the guest, not spending time in front of a screen.",
+    "Your time belongs to the company you’re building. The back office belongs with Pren."
+  ],
+  [
+    "One operating system for the modern hotel. Helping exceptional hoteliers do their best work.",
+    "The accounting and back-office firm for startups. Helping founders do their best work."
+  ],
+  [
+    "The agentic operating system for hotels. Helping exceptional hoteliers do their best work.",
+    "The accounting and back-office firm for startups. Helping founders do their best work."
+  ],
+  [
+    "Property Management System (PMS)",
+    "Accounting"
+  ],
+  [
+    "The operating core that runs your entire property.",
+    "Clear books that keep pace with your company."
+  ],
+  [
+    "Turn your website into your best-converting sales channel.",
+    "Year-round preparation for your next tax filing."
+  ],
+  [
+    "Charge food, drinks, and retail straight to the room.",
+    "The financial work behind a growing team."
+  ],
+  [
+    "Timely, multilingual guest messaging across the journey.",
+    "One team to keep the financial work moving."
+  ],
+  [
+    "Pren is one operating system for the modern hotel. It coordinates routine operational work in the background and gives your team clear control over what runs automatically. The result is less administration and more time with guests.",
+    "Pren is the accounting and back-office firm for startups. We bring intelligent software and financial expertise together across accounting, taxes, payroll, and financial operations, so founders can focus on building."
+  ],
+  [
+    "How long does onboarding take?",
+    "How does onboarding work?"
+  ],
+  [
+    "Days, not months. We map your property, configure the core workflows, and work alongside your team through launch, with forward-deployed engineering support at no additional implementation charge.",
+    "Connect your financial accounts, share your company records, and tell us what is already in motion. Pren brings it together, works through the open items, and takes over the ongoing financial work. We guide the setup and handle the follow-through."
+  ],
+  [
+    "Does the AI act without my approval?",
+    "What will I need to approve?"
+  ],
+  [
+    "You decide. Routine work runs autonomously in the background, and anything that needs judgment is surfaced as a suggested action for your team to approve. Every action is visible, reviewable, and adjustable.",
+    "The decisions that need you, with the work already prepared. Pren handles the recurring tasks, gathers the context, and works through routine questions. When your input is needed, review it in a short conversation and keep moving."
+  ],
+  [
+    "Does Pren replace my existing systems?",
+    "Do I need to change my systems?"
+  ],
+  [
+    "Pren can replace your software stack or work alongside the systems you already use, integrating with leading hotel software. Over time it can take on more of your operation at the pace you choose.",
+    "Pren is built around the financial tools startups already use, from Mercury and Rho to Stripe. We bring your financial activity together with company records and expert attention, so you have one team responsible for the work."
+  ],
+  [
+    "Security is foundational to how Pren is built. Data is encrypted in transit and at rest, with strict role-based access controls and a full audit trail of every action the system takes. Your data always stays yours.",
+    "Your financial information needs careful handling. Before connecting accounts, we walk through the information needed, who needs access, and the controls available for your company."
+  ],
+  [
+    "Pricing is tailored to your property. Get in touch and we'll put together a proposal that fits how you operate.",
+    "Pricing reflects your company’s stage, complexity, and the work you want us to own. Talk with us for a clear proposal covering the scope, onboarding, and ongoing service."
+  ],
+  [
+    "Built to for enterprises. Your data will always be secure.",
+    "Intelligent software does the recurring work. Financial experts bring judgment where it matters."
+  ],
+  [
+    "See what Pren is doing and why, nothing happens without a clear trail.",
+    "Know where things stand, what is complete, and what needs your decision."
+  ],
+  [
+    "The system works ahead of you. Every action reviewable, every decision yours.",
+    "The work has an owner, from the first document to the final filing or follow-up."
+  ],
+  [
+    "The agentic operating system for hotels. Helping exceptional hoteliers do their best work.",
+    "The accounting and back-office firm for startups. Helping founders do their best work."
+  ],
+  [
+    "The system knows who your guests are prepares suggestions to make their stay truly personal.",
+    "Keep financial records, supporting documents, and the story behind your numbers ready for your next round."
+  ],
+  [
+    "One system for all your payments. Select from a wide variety of configurations for your need.",
+    "Bring payroll, employee changes, and the books together, so growing your team creates less work for you."
+  ],
+  [
+    "Create a bespoke booking experience for any type of booking to drive upsell and direct bookings.",
+    "Keep tax preparation moving through the year, with the records and context already connected when it is time to file."
+  ],
+  [
+    "From bookings to getting quotes from external vendors to book an event, Pren handles everything.",
+    "From everyday transactions to a new hire or funding round, Pren connects the work and takes responsibility for seeing it through."
+  ],
+  [
+    "Thanks to Spatial Reasoning, Pren can reason about the physical properties of a hotel.",
+    "Every transaction has a story. Pren connects your accounts, contracts, payroll, and funding history, so the work starts with the context it needs."
+  ],
+  [
+    "Pren is joining Entrepreneurs First  ·  Read the announcement →",
+    "Accounting and back office for startups  ·  Meet Pren →"
+  ],
+  [
+    "Pren is joining Entrepreneurs First  ·  Read the announcement →",
+    "Accounting and back office for startups  ·  Meet Pren →"
+  ]
 ]);
 
 function rebrandText(root) {
@@ -161,8 +488,37 @@ function responsiveReplacementFor(value) {
   return null;
 }
 
+const financeVisualFiles = new Set(["LWciQDs2HSYMOqmf3HLdZvk06c.webp", "Ww9LkYSQAjxEExdqEAsfzDTIA0.webp", "fWp9FKS85PU5vtVRYVAY8ADH0uA.png", "dC5dMS42UXlHYGRD9KyKsNbGrw.png", "mCUOZqVUTUKsNa7OlHF3cJuLGU.webp", "V54DaVSxovypi2LjFdicj3SFW0E.webp", "rKVQbzNt0rRY6xA3AgOx69hnnWk.webp", "QLvbVlBnGT9ntr01Cm54TD7yk.webp", "DGOVFpht4IqhBz3HRXktXc0U.png", "4YpZ1YfWJPmjwAFFEpmR9PrJAo.png", "Rr3k2PXdBPO5sHi3BttPInFarI.webp", "vn9HeULEJp3lucqM0Q5vrsL2zc.webp", "lupgq0BeZV6tgxwWUi3z3UMXOc.webp", "loq5tkwhJVMwjgpMM3UNtJupW8s.png", "GgngolLn2Hb2Ewb0JvHi05vEQs.webp", "3pvA4LbOKtcpetJKZdJ4HZDX4.png", "4bxwGwXtm4SxLF8OIY2jhlkXA.png", "iXKOCKIXAWtpopGyOkxipzyHS8.webp", "n523GLZincajiNF1etm8ItFM8.webp", "wF7rKm0VDM2QEsv055PsfCYen8.png", "4pdANzgBsr6sC61JYNWg6KX92UU.png", "vOjIBI6wK4JPl2NTAQQNwPEKtV4.png", "nH2I2tCCtA8Hnz0k9unHthLQ3Rk.webp", "7aZtmBBEAZPvqEkyKgHbRll3Lao.png", "Rpqs93qsm0RFSJLkBfejwwnQAfg.webp"]);
+
+const financeAssetVersion = "pren-finance-20260909";
+
+function versionedImageAsset(value) {
+  const url = new URL(value, location.origin);
+  url.searchParams.set("v", financeAssetVersion);
+  return value.startsWith("/") ? `${url.pathname}${url.search}${url.hash}` : url.href;
+}
+
+function versionedImageSet(value) {
+  return value.split(",").map((candidate) => {
+    const [url, ...descriptor] = candidate.trim().split(/\s+/);
+    return [versionedImageAsset(url), ...descriptor].join(" ");
+  }).join(", ");
+}
+
 function rewriteImage(image) {
   const currentValue = image.currentSrc || image.src || image.srcset;
+  if ([...imageAltMap.keys()].some((name) => currentValue?.includes(name))) {
+    const source = image.getAttribute("src");
+    const sourceSet = image.getAttribute("srcset");
+    if (source && new URL(source, location.origin).searchParams.get("v") !== financeAssetVersion) {
+      image.src = versionedImageAsset(source);
+    }
+    if (sourceSet && !sourceSet.includes(`v=${financeAssetVersion}`)) image.srcset = versionedImageSet(sourceSet);
+  }
+  if ([...financeVisualFiles].some((name) => currentValue?.includes(name))) image.style.objectFit = "contain";
+  for (const [source, alt] of imageAltMap) {
+    if (currentValue?.includes(source)) image.alt = alt;
+  }
   const replacement = replacementFor(currentValue) || responsiveReplacementFor(currentValue);
   if (!replacement) {
     for (const [source, alt] of imageAltMap) {
@@ -177,10 +533,12 @@ function rewriteImage(image) {
       ...variants.widths.map((width) => `${stem}-${width}.webp ${width}w`),
       ...(variants.fullWidth ? [`${replacement} ${variants.fullWidth}w`] : []),
     ];
-    image.setAttribute("srcset", candidates.join(", "));
+    image.setAttribute("srcset", versionedImageSet(candidates.join(", ")));
   }
-  image.src = replacement;
+  image.src = versionedImageAsset(replacement);
   if (replacement === "/pren/images/hero-city.webp") {
+    // Cover fills a tall mobile hero from a wide photograph; choose enough pixels for its height.
+    image.sizes = "(max-aspect-ratio: 3/2) 150vh, 100vw";
     image.loading = "eager";
     image.fetchPriority = "high";
   }
@@ -285,40 +643,61 @@ function enhanceFaq(element) {
   const question = lines[0];
   if (!faqQuestions.has(question)) return;
   element.setAttribute("role", "button");
-  const isExpanded = element.getAttribute("data-framer-name") === "Open"
-    || (element.getAttribute("data-framer-name") !== "Closed" && lines.length > 1);
+  const variant = element.getAttribute("data-framer-name");
+  const isExpanded = variant === "Open" || variant === "Opened"
+    || (variant !== "Closed" && lines.length > 1);
   element.setAttribute("aria-expanded", String(isExpanded));
   if (enhancedFaqs.has(element)) return;
   enhancedFaqs.add(element);
+  // Framer's tap gesture supports Enter. Give Space the same keyboard path.
   element.addEventListener("keydown", (event) => {
-    if (event.key !== "Enter" && event.key !== " ") return;
+    if (event.key !== " ") return;
     event.preventDefault();
-    element.click();
-  });
+    event.stopImmediatePropagation();
+    if (event.repeat) return;
+    const keyboard = { key: "Enter", code: "Enter", keyCode: 13, bubbles: true, cancelable: true };
+    element.dispatchEvent(new KeyboardEvent("keydown", keyboard));
+    element.dispatchEvent(new KeyboardEvent("keyup", keyboard));
+  }, true);
+  element.addEventListener("keyup", (event) => {
+    if (event.key !== " ") return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
 }
 
-function ensureEvidenceSource() {
+function ensureServiceContext() {
   const problem = document.querySelector('[data-framer-name="Problem"]');
   if (!problem || problem.querySelector(".pren-evidence-source")) return;
-  const source = document.createElement("p");
-  source.className = "pren-evidence-source";
-  source.append("Source: ");
-  const link = document.createElement("a");
-  link.href = evidenceSourceUrl;
-  link.target = "_blank";
-  link.rel = "noopener noreferrer";
-  link.textContent = "Access Hospitality, AI in Hospitality 2025";
-  source.append(link, ". UK & Ireland figures.");
-  problem.append(source);
+  const context = document.createElement("p");
+  context.className = "pren-evidence-source";
+  context.textContent = "Accounting, taxes, payroll, and financial operations. Built around your startup.";
+  problem.append(context);
 }
 
-function updateEvidenceStats() {
+function updateServiceStats() {
   const stats = [
-    ["Stat Card 1", "286 hrs", "lost per manager each year switching between disconnected systems"],
-    ["Stat Card 2", "13%", "of operating costs lost to inefficiencies from unconnected software"],
-    ["Stat Card 3", "60%", "of operators report incomplete or unreliable data"],
-    ["Stat Card 4", "56%", "of operators miss upsell opportunities because of stock shortages"],
-  ];
+  [
+    "Stat Card 1",
+    "1",
+    "finance relationship for the entire back office"
+  ],
+  [
+    "Stat Card 2",
+    "12",
+    "months of preparation, so tax season starts long before the deadline"
+  ],
+  [
+    "Stat Card 3",
+    "5",
+    "connected services, from accounting and taxes to fundraising readiness"
+  ],
+  [
+    "Stat Card 4",
+    "One",
+    "place to see the work, ask a question, and review what is ready"
+  ]
+];
   for (const [name, metric, detail] of stats) {
     const card = document.querySelector(`[data-framer-name="${name}"]`);
     if (!card) continue;
@@ -388,9 +767,9 @@ function refine(root = document) {
       link.removeAttribute("rel");
     }
     if (link.getAttribute("href")?.includes("/services/spatial-reasoning")) {
-      link.setAttribute("href", "/services/booking-engine");
+      link.setAttribute("href", demoPath);
       const text = [...link.querySelectorAll("p,a")].find((element) => element.textContent.trim() === "Spatial");
-      if (text) text.textContent = "Booking engine";
+      if (text) text.textContent = "Company context";
     }
   }
 
@@ -413,18 +792,9 @@ function refine(root = document) {
   }
 
   for (const form of queryIncludingRoot("form")) enhanceContactForm(form);
-  for (const faq of queryIncludingRoot('[data-framer-name="Closed"], [data-framer-name="Open"], [role="button"]')) {
+  for (const faq of queryIncludingRoot('[data-framer-name="Closed"], [data-framer-name="Open"], [data-framer-name="Opened"], [role="button"]')) {
     enhanceFaq(faq);
   }
-
-  const spatialHeading = [...queryIncludingRoot("h2")].find(
-    (heading) => heading.textContent.trim() === "Pren Spatial",
-  );
-  const spatialSection = spatialHeading?.closest("section");
-  const spatialLabel = [...(spatialSection?.querySelectorAll("p") || [])].find(
-    (paragraph) => paragraph.textContent.trim() === "POS",
-  );
-  if (spatialLabel) spatialLabel.textContent = "SPATIAL";
 
   for (const link of queryIncludingRoot("nav a[href], footer a[href]")) {
     const url = new URL(link.href, location.href);
@@ -437,8 +807,8 @@ function refine(root = document) {
     }
   }
 
-  ensureEvidenceSource();
-  updateEvidenceStats();
+  ensureServiceContext();
+  updateServiceStats();
   updateMetadata();
   markMainLandmark();
 }
@@ -464,12 +834,15 @@ document.addEventListener(
 );
 
 let scheduled = false;
+const pendingMutations = [];
 const observer = new MutationObserver((mutations) => {
+  pendingMutations.push(...mutations);
   if (scheduled) return;
   scheduled = true;
   requestAnimationFrame(() => {
     scheduled = false;
-    for (const mutation of mutations) {
+    const batch = pendingMutations.splice(0);
+    for (const mutation of batch) {
       const mutationElement = mutation.target.nodeType === Node.ELEMENT_NODE
         ? mutation.target
         : mutation.target.parentElement;
@@ -487,6 +860,8 @@ const observer = new MutationObserver((mutations) => {
 function startRefinement() {
   refine();
   observer.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-framer-name"],
     childList: true,
     characterData: true,
     subtree: true,

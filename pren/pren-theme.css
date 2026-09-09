@@ -517,3 +517,9 @@ img[src*="/pren/images/hero-city.webp"] {
     transform: none !important;
   }
 }
+
+/* Product previews remain a quiet backdrop for the service navigation labels. */
+a[href^="/services/"] img[src*="framerusercontent.com/images/"] {
+  object-fit: cover !important;
+  filter: brightness(0.48);
+}

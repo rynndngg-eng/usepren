@@ -1,4 +1,4 @@
-import{t as e}from"./rolldown-runtime.Dh6celcD.mjs";import{S as t,c as n,k as r,o as i}from"./react.BpKPsBQp.mjs";import{Y as a,j as o,o as s}from"./framer.BDTnGcef.mjs";function c(e){let{equation:t,textColor:i,fontSize:a,alignment:o,verticalPadding:s}=e,c=r(()=>i||`currentColor`,[i]),l=r(()=>o===`left`?`flex-start`:o===`right`?`flex-end`:`center`,[o]),u=r(()=>`Mathematical equation: ${t}`,[t]),d=r(()=>`<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+import{t as e}from"./rolldown-runtime.Dh6celcD.mjs?v=pren-finance-20260909";import{S as t,c as n,k as r,o as i}from"./react.BpKPsBQp.mjs?v=pren-finance-20260909";import{Y as a,j as o,o as s}from"./framer.BDTnGcef.mjs?v=pren-finance-20260909";function c(e){let{equation:t,textColor:i,fontSize:a,alignment:o,verticalPadding:s}=e,c=r(()=>i||`currentColor`,[i]),l=r(()=>o===`left`?`flex-start`:o===`right`?`flex-end`:`center`,[o]),u=r(()=>`Mathematical equation: ${t}`,[t]),d=r(()=>`<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
   <semantics>
     <mrow>
       <munder>
