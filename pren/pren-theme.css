@@ -523,3 +523,30 @@ a[href^="/services/"] img[src*="framerusercontent.com/images/"] {
   object-fit: cover !important;
   filter: brightness(0.48);
 }
+/* Pren public launch: keep service labels separate from illustrative screenshots. */
+[data-framer-name="Service Link"] [data-framer-name="Service Background Image"] {
+  top: 52% !important;
+  bottom: 12% !important;
+  height: auto !important;
+  filter: none !important;
+  transform: none !important;
+}
+
+a[data-framer-name="Service Link"][href^="/services/"] [data-framer-name="Service Background Image"] img {
+  object-fit: contain !important;
+  object-position: center !important;
+  filter: none !important;
+}
+
+[data-framer-name="Service Link"] [data-framer-name="Service Card Scrim"] {
+  background: none !important;
+}
+
+/* Framer's original 560px inner component must follow the shorter mobile card. */
+@media (max-width: 809.98px) {
+  [data-framer-name="Service Link"] .framer-zivcg-container,
+  [data-framer-name="Service Link"] .framer-zivcg-container > div {
+    height: 100% !important;
+    min-height: 0 !important;
+  }
+}

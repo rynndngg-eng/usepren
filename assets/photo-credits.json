@@ -1,0 +1,47 @@
+{
+  "updated_at": "2026-09-16T22:10:51.054571+00:00",
+  "photographs": [
+    {
+      "file": "sf-bridge-fog.webp",
+      "path": "/assets/sf-bridge-fog.webp",
+      "title": "Golden Gate Bridge above the fog",
+      "photographer": "Leo_Visions",
+      "photographer_url": "https://unsplash.com/@leo_visions_",
+      "attribution": "Photo by Leo_Visions on Unsplash",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/golden-gate-bridge-san-francisco-california-P3xi-LEkZbo",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "modifications": "Resized and compressed for web. No generative or color edits.",
+      "sha256": "a62658531118d8e23837bb6371d510978601c2f9ae1d260d538dce545cc40b55"
+    },
+    {
+      "file": "sf-california-street.webp",
+      "path": "/assets/sf-california-street.webp",
+      "title": "California Street at quiet evening light",
+      "photographer": "Kellen Riggin",
+      "photographer_url": "https://unsplash.com/@kalaniparker",
+      "attribution": "Photo by Kellen Riggin on Unsplash",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/a-city-street-with-tall-buildings-sqPnlSKNZL4",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "modifications": "Resized and compressed for web. No generative or color edits.",
+      "sha256": "9acbdd18d9251b71f7557da6908b8e85f781cba76936fb7241889a5007cd8ec4"
+    },
+    {
+      "file": "sf-skyline-evening.webp",
+      "path": "/assets/sf-skyline-evening.webp",
+      "title": "San Francisco skyline in the last sunlight",
+      "photographer": "Kellen Riggin",
+      "photographer_url": "https://unsplash.com/@kalaniparker",
+      "attribution": "Photo by Kellen Riggin on Unsplash",
+      "source": "Unsplash",
+      "source_url": "https://unsplash.com/photos/san-franciscos-skyline-shines-in-the-golden-sunlight-Z4Z20tnA88U",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "modifications": "Resized and compressed for web. No generative or color edits.",
+      "sha256": "1f1265f3ab8c5ab21a8769437c8e54614259044ad5dfac390803341805ca3163"
+    }
+  ]
+}
